@@ -7,9 +7,9 @@
   "author": "Marcos Gin <marcosgin291@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "ts": "tsc -w",
-    "server": "tsc && nodemon ./build/index.js",
-    "start": "node ./build/index.js"
+    "start": "node ./dist/index.js",
+    "server": "npm run grunt && nodemon ./dist/index.js",
+    "grunt": "grunt"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -26,7 +26,13 @@
     "@types/express": "^4.0.39",
     "@types/mongoose": "^4.7.29",
     "@types/node": "^8.0.58",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ts": "^6.0.0-beta.17",
     "nodemon": "^1.12.5",
+    "shelljs": "^0.7.8",
     "typescript": "^2.6.2"
   }
 }
