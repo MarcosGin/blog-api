@@ -1,11 +1,16 @@
 import * as http from 'http';
 import * as debug from 'debug';
+import * as pug from 'pug';
 
 import Server from './server';
 
 debug('ts-express:server');
 
 const port = normalizePort(process.env.PORT || 3000);
+const viewDir = `${__dirname}/views`;
+
+Server.set('views', viewDir);
+Server.set('view engine', 'pug');
 Server.set('port', port);
 
 console.log(`Server listening on port ${port}`);
