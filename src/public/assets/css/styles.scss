@@ -1,8 +1,10 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+@import "lib/bootstrap/bootstrap";
 
-body {
-  font: 100% $font-stack;
-  background: #f2d2d2;
-  color: $primary-color;
+/* Styles */
+*{
+  padding: 0;
+  box-sizing: border-box;
+}
+p{
+  margin-bottom: 0;
 }

@@ -8,7 +8,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: './src/public/assets/css',
-                    src: ['*.scss'],
+                    src: ['**.scss', '!**/lib/'],
                     dest: './dist/public/assets/css',
                     ext: '.css'
                 }]
@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: "./src/public",
-                        src: ["**",'!**/*.scss'],
+                        src: ["**","!**/assets/css/lib/**",'!**/*.scss'],
                         dest: "./dist/public"
                     },
                     {
@@ -68,8 +68,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-ts");
     grunt.registerTask("default", [
         "sass",
+        "ts",        
         "copy",
-        "ts",
         "watch"
     ]);
 
