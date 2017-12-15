@@ -9,6 +9,26 @@
 body{
   color: #212529;
   background-color: #f5f8fa;
+
+    & .container{
+      padding-top: 20px;
+    }
+    @include media-breakpoint-up(sm) { 
+      & .container {
+        width: 100% !important;
+      }
+    }
+    @include media-breakpoint-up(lg) { 
+      & .container {
+        width: 990px !important;
+      }
+    }
+    
+    @include media-breakpoint-up(xl) {
+      & .container {
+        width: 1230px !important;
+      }
+    }
 }
 p{
   margin-bottom: 0;
