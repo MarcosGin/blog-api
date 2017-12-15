@@ -1,0 +1,33 @@
+.navbar{
+    background: #3097D1;
+    padding: 8px 14px;
+
+    .navbar-brand{
+      font-weight: 300;
+      color: #fff;
+      padding: 0;
+      margin-right: 30px;
+      &:hover { color: #f2f2f2; }
+    }
+    .navbar-nav{
+      .nav-item{
+        .nav-link{
+          color:rgba(255, 255, 255, 0.5);
+          font-size: 14px;
+          font-weight: 300;
+          &:hover{ color: rgba(255, 255, 255, 0.75);}
+        }
+        .btn{
+          border-color: #fff;
+          color: #fff;
+          font-weight: 300;
+          font-size: 12px;
+          margin: 5px 0 0 5px;
+          &:hover{ background: rgba(255, 255, 255, 0.1); }
+        }
+        &.active .nav-link{
+          color: #fff;
+        }
+      }
+    }
+}
