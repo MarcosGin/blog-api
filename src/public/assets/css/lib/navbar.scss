@@ -1,7 +1,15 @@
 .navbar{
     background: #3097D1;
     padding: 8px 14px;
-
+    .navbar-toggler{
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      &:hover, &:focus{
+        color: #fff;
+      }
+    }
     .navbar-brand{
       font-weight: 300;
       color: #fff;
