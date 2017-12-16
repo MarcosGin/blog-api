@@ -43,6 +43,7 @@ p{
 .card{
   font-weight: 300;
   font-size: 14px;
+  margin-bottom: 15px;
     &.user-profile{
       text-align: center;
     }
@@ -53,7 +54,8 @@ p{
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;        
     }
-    .card-block{    
+    .card-block{
+
         a.avatar img {
           max-width: 100px;
           margin-top: -70px;
@@ -85,6 +87,39 @@ p{
                 border-right: none;
               }
             }
+        }
+        .post{
+          border-bottom: 1px solid rgba(0,0,0,0.125);
+          padding: 21px;
+          &:last-child{
+            border-bottom: none;
+          }
+          img{
+            width: 60px;
+            margin-right: 14px;
+          }
+          .info h6{
+              font-size: 14px;   
+          }
+          .footer{
+            position: relative;
+            padding-bottom: 10px;
+            .heart {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              top: -15px;
+              right: -15px;
+              background: url(../img/heart.png) no-repeat;
+              background-position: 0 0;
+              background-size: cover;
+              cursor: pointer;
+              &.active{
+                background-position: -1400px 0;
+                transition: background 1s steps(28);
+              }
+            }
+          }
         }
     }
 }

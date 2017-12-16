@@ -9,7 +9,7 @@ block content
                     a.avatar(href="")
                         img(src="assets/img/avatar.png", alt="")
                     h6.nick
-                        a(href="#")  August Joseph
+                        a(href="#")  Marcos Gin
                     p
                         | FullStack Developer Web
                     
@@ -23,9 +23,32 @@ block content
 
         div.col-xl-6.col-sm-8
             div.card
-                div.card-block
-                    | Posts here.
+                div.card-block.p-0
+                    each post in posts
+                        div.post.d-flex.justify-content-between
+                            div
+                                img.rounded-circle(src="assets/img/avatar.png", alt="")
+                            div.info
+                                div.header.d-flex.justify-content-between
+                                    h6 #{post.name}
+                                    small #{post.date}
+                                div.body
+                                    | #{post.content}
+                                div.footer
+                                    div.heart
+
+                                
         div.col-xl-3.col-sm-12
             div.card
                 div.card-block
                     | Footer here.
+
+block script
+    script.
+        $(document).ready(function(){
+            var heart = $('.heart');
+
+            heart.click(function(){
+                $(this).toggleClass('active');
+            })
+        });

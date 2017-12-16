@@ -44,7 +44,13 @@ class Server  {
         let router: express.Router;
         router = express.Router();
         router.get('/', (req, res, next) => {
-            res.render('index', { title: 'Home'});
+            let posts = [
+                { name: 'Marcos Gin', date: '15m', content:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ratione corrupti reprehenderit sequi recusandae est laboriosam vitae vero dolorum nostrum!' },
+                { name: 'Marcos Gin', date: '1h', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sit corporis doloribus consectetur autem, nesciunt magni amet illo minima molestiae non a eaque alias enim cupiditate sunt corrupti, quas magnam.' },                
+            ];
+
+
+            res.render('index', { title: 'Home', posts: posts });
         });
 
         this.app.use('/', router);
