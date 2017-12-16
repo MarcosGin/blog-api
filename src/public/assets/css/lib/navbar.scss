@@ -33,8 +33,23 @@
           margin: 5px 0 0 5px;
           &:hover{ background: rgba(255, 255, 255, 0.1); }
         }
-        &.active .nav-link{
-          color: #fff;
+        &.active .nav-link, &.active .btn{
+          color: #fff !important;
+        }
+        @include media-breakpoint-down(sm) {
+          & > .btn {
+            color:rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-weight: 300;
+            padding: 9px 0;
+            outline: none;
+            margin: 0;
+            display: block;
+            border: none;
+            text-align: left;
+            box-shadow: none;
+            &:hover{ background: transparent; color: rgba(255, 255, 255, 0.75);}
+          }
         }
       }
     }
