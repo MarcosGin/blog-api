@@ -10,6 +10,13 @@
 h1,h2,h3,h4,h5,h6{
   font-weight: 600;
 }
+@include media-breakpoint-down(sm) {
+  .col-sms{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+ 
 body{
   color: #212529;
   background-color: #f5f8fa;
