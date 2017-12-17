@@ -13,15 +13,15 @@ class UserRouter {
     public GetUsers(req: Request, res: Response): void {
         User.find({})
             .then((data) => {
-                const status = res.statusCode;
-                res.json({
+                const status = 200;
+                res.status(status).json({
                     status,
                     data
                 });
             })
             .catch((err) => {
-                const status = res.statusCode;
-                res.json({
+                const status = 500;
+                res.status(status).json({
                     status,
                     err
                 });
@@ -31,14 +31,14 @@ class UserRouter {
         const username: string = req.params.username;
             User.findOne({ username }).populate('posts', 'title content')
             .then((data) => {
-                const status = res.statusCode;
+                const status = 200;
                 res.json({
                     status,
                     data
                 });
             })
             .catch((err) => {
-                const status = res.statusCode;
+                const status = 500;
                 res.json({
                     status,
                     err
@@ -46,29 +46,29 @@ class UserRouter {
             })
     }
     public CreateUser(req: Request, res: Response): void {
-        const name: string = req.body.name;
         const username: string = req.body.username;
         const email: string = req.body.email;
         const password: string = req.body.password;
+        const profile: Object = req.body.profile;
         const posts: string[] = req.body.posts;
 
         const user = new User({
-            name,
             username,
             email,
             password,
+            profile,
             posts
         })
         user.save()
             .then((data) => {
-                const status = res.statusCode;
-                res.json({
+                const status = 200;
+                res.status(200).json({
                     status,
                     data
                 });
             })
             .catch((err) => {
-                const status = res.statusCode;
+                const status = 500;
                 res.json({
                     status,
                     err
@@ -79,14 +79,14 @@ class UserRouter {
         const username: string = req.params.username;
         User.findOneAndUpdate({ username }, req.body)
             .then((data) => {
-                const status = res.statusCode;
+                const status = 200;
                 res.json({
                     status,
                     data
                 });
             })
             .catch((err) => {
-                const status = res.statusCode;
+                const status = 500;
                 res.json({
                     status,
                     err
@@ -98,14 +98,14 @@ class UserRouter {
         const username: string = req.params.username;
         User.findOneAndRemove({ username })
             .then((data) => {
-                const status = res.statusCode;
+                const status = 200;
                 res.json({
                     status,
                     data
                 });
             })
             .catch((err) => {
-                const status = res.statusCode;
+                const status = 500;
                 res.json({
                     status,
                     err

@@ -1,13 +1,7 @@
 import { Schema, model } from 'mongoose';
 
 let UserSchema: Schema = new Schema({
-    createdAt: Date,
-    updatedAt: Date,
-    name: {
-        type: String,
-        default: '',
-        required: true
-    },
+    
     username: {
         type: String,
         default: '',
@@ -26,10 +20,36 @@ let UserSchema: Schema = new Schema({
         default: '',
         required: true
     },
+    profile:{
+        firstname: {
+            type: String,
+            default: '',
+            required: true
+        },
+        lastname: {
+            type: String,
+            default: '',
+            required: true
+        },
+        works: [],
+        city:{
+            type: String,
+            default: '',
+            require: true,
+        },
+        country: {
+            type: String,
+            default: '',
+            require: true,
+        },
+        birthday: Date,
+    },
     posts: [{
         type: Schema.Types.ObjectId,
         ref: 'Post'
-    }]
+    }],
+    createdAt: Date,
+    updatedAt: Date,
 });
 
 export default model('User', UserSchema);
