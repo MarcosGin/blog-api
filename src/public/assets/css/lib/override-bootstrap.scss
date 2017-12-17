@@ -6,10 +6,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html{
   font-size: 14px;
 }
 h1,h2,h3,h4,h5,h6{
   font-weight: 600;
+  font-size: 14px;
 }
 a{
   color: #3097D1;
@@ -76,7 +79,6 @@ body{
 }
 .card{
   font-weight: 300;
-  font-size: 14px;
   margin-bottom: 15px;
 
     .card-header{
