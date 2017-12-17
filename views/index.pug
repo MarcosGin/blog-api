@@ -20,7 +20,29 @@ block content
                         li
                             a Followers
                                 h6 116k
-
+            div.card.user-info
+                div.card-header
+                    h6 About 
+                        small · 
+                            a(href="#") Edit
+                div.card-block
+                    ul
+                        li.d-flex.justify-content-beetwen
+                            i.fa.fa-birthday-cake
+                            span Birthday date 
+                                b May 30, 1999
+                        li.d-flex.justify-content-beetwen
+                            i.fa.fa-briefcase
+                            span Works at 
+                                b Espin Labs
+                        li.d-flex.justify-content-beetwen
+                            i.fa.fa-home
+                            span Lives in 
+                                b Buenos Aires, Avellaneda
+                        li.d-flex.justify-content-beetwen
+                            i.fa.fa-map-marker
+                            span From 
+                                b Argentina                        
         div.col-xl-6.col-sm-8.col-sms
             div.card
                 div.card-block.p-0
@@ -39,9 +61,35 @@ block content
 
                                 
         div.col-xl-3.col-sm-12
-            div.card
+            div.card.suggested
+                div.card-header
+                    h6 Suggested
+                        small · 
+                                a(href="#") View all
                 div.card-block
-                    | Footer here.
+                    div.suggest.d-flex.justify-content-between
+                        div
+                            img.rounded-circle(src="assets/img/avatar2.jpg")
+                        div.info
+                            div.header
+                                strong Cristian Tevez 
+                                | @cristevez
+                            button.btn.btn-primary.follow 
+                                span
+                                    i.fa.fa-user-plus 
+                                    =" Follow"
+                    div.suggest.d-flex.justify-content-between
+                        div
+                            img.rounded-circle(src="assets/img/avatar3.png")
+                        div.info
+                            div.header
+                                strong Oscar Riquelme 
+                                | @lolo
+                            button.btn.btn-primary.follow 
+                                span
+                                    i.fa.fa-user-plus 
+                                    =" Follow"
+                          
 
 block script
     script.
