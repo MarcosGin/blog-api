@@ -1,0 +1,92 @@
+/*!
+ *   Override styles boostrap
+ *   @MarcosGin
+ */
+*{
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 600;
+}
+a{
+  color: #3097D1;
+  text-decoration: none;
+  &:hover{
+    color: #216a94;
+  }
+}
+p{
+  margin-bottom: 0;
+}
+ul{
+    list-style: none;
+}
+.img-60{
+    width: 60px;
+    margin-right: 10px;
+}
+.btn{
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;  
+}
+.btn.btn-primary{
+    color: #3097D1;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 4px 7px;
+    border-color: #3097D1;
+    font-size: 12px;
+    &:hover{
+        color: #fff;
+        background-color: #3097D1;
+        border-color: #3097D1;
+    }
+}
+body{
+  color: #212529;
+  background-color: #f5f8fa;
+
+    & .container{
+      padding-top: 20px;
+    }
+    @include media-breakpoint-up(sm) { 
+      & .container {
+        width: 100% !important;
+      }
+    }
+    @include media-breakpoint-up(lg) { 
+      & .container {
+        width: 990px !important;
+      }
+    }
+    
+    @include media-breakpoint-up(xl) {
+      & .container {
+        width: 1230px !important;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+        .col-sms{
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+.card{
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 15px;
+
+    .card-header{
+      background: transparent;
+      border:none;
+      small a{
+          font-size: 12px;
+      }
+    }
+    .card-block{
+        padding-top:0; 
+    }
+}

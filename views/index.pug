@@ -5,12 +5,12 @@ block content
         div.col-xl-3.col-sm-4.col-sms
             div.card.user-profile
                 div.bg-user(style="background-image: url(assets/img/wallpaper-user.jpg);")            
-                div.card-block
-                    a.avatar(href="")
+                .card-block.text-center
+                    div.avatar(href="")
                         img(src="assets/img/avatar.png", alt="")
-                    h6.nick
-                        a(href="#")  Marcos Gin
-                    p
+                    h6
+                        ="Marcos Gin"
+                    p.mb-4
                         | FullStack Developer Web
                     
                     ul.followers
@@ -27,19 +27,19 @@ block content
                             a(href="#") Edit
                 div.card-block
                     ul
-                        li.d-flex.justify-content-beetwen
+                        li.d-flex.justify-content-beetwen.mb-2
                             i.fa.fa-birthday-cake
                             span Birthday date 
                                 b May 30, 1999
-                        li.d-flex.justify-content-beetwen
+                        li.d-flex.justify-content-beetwen.mb-2
                             i.fa.fa-briefcase
                             span Works at 
                                 b Espin Labs
-                        li.d-flex.justify-content-beetwen
+                        li.d-flex.justify-content-beetwen.mb-2
                             i.fa.fa-home
                             span Lives in 
                                 b Buenos Aires, Avellaneda
-                        li.d-flex.justify-content-beetwen
+                        li.d-flex.justify-content-beetwen.mb-2
                             i.fa.fa-map-marker
                             span From 
                                 b Argentina                        
@@ -49,7 +49,7 @@ block content
                     each post in posts
                         div.post.d-flex.justify-content-between
                             div
-                                img.rounded-circle(src="assets/img/avatar.png", alt="")
+                                img.img-60.rounded-circle(src="assets/img/avatar.png", alt="")
                             div.info
                                 div.header.d-flex.justify-content-between
                                     h6 #{post.name}
@@ -67,10 +67,10 @@ block content
                         small · 
                                 a(href="#") View all
                 div.card-block
-                    div.suggest.d-flex.justify-content-between
+                    div.suggest.d-flex.justify-content-between.mb-2
                         div
-                            img.rounded-circle(src="assets/img/avatar2.jpg")
-                        div.info
+                            img.img-60.rounded-circle(src="assets/img/avatar2.jpg")
+                        div.info.w-100
                             div.header
                                 strong Cristian Tevez 
                                 | @cristevez
@@ -78,10 +78,10 @@ block content
                                 span
                                     i.fa.fa-user-plus 
                                     =" Follow"
-                    div.suggest.d-flex.justify-content-between
+                    div.suggest.d-flex.justify-content-between.mb-2
                         div
-                            img.rounded-circle(src="assets/img/avatar3.png")
-                        div.info
+                            img.img-60.rounded-circle(src="assets/img/avatar3.png")
+                        div.info.w-100
                             div.header
                                 strong Oscar Riquelme 
                                 | @lolo
