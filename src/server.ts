@@ -38,6 +38,7 @@ class Server  {
         this.app.use(compression());
         this.app.use(helmet());        
         this.app.use(cors());
+        this.app.locals.title = 'BlogAPIResful';
     }
 
     public routes(): void {
@@ -50,7 +51,7 @@ class Server  {
             ];
 
 
-            res.render('index', { title: 'Home', posts: posts });
+            res.render('index', { subTitle: 'Home',posts: posts });
         });
 
         this.app.use('/', router);
