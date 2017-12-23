@@ -13,11 +13,11 @@ class UserRouter {
     }
     
     routes() {
-        this.router.get('/', this.userCtrl.GetUsers);
-        this.router.get('/:username', this.userCtrl.GetUser);
-        this.router.post('/', this.userCtrl.CreateUser);
-        this.router.put('/:username', this.userCtrl.UpdateUser);
-        this.router.delete('/:username', this.userCtrl.DeleteUser);
+        this.router.get('/', this.userCtrl.getAll);
+        this.router.get('/:username', this.userCtrl.get);
+        this.router.post('/', this.userCtrl.create);
+        this.router.put('/:username', this.userCtrl.update);
+        this.router.delete('/:username', this.userCtrl.delete);
     }
 
 

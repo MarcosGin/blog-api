@@ -18,7 +18,8 @@ let UserSchema: Schema = new Schema({
     password: {
         type: String,
         default: '',
-        required: true
+        required: true,
+        select: false
     },
     profile:{
         firstname: {

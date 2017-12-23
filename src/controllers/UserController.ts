@@ -1,113 +1,52 @@
-import { Request, Response,} from 'express';
+import { Request, Response } from 'express';
+import * as _ from "lodash";
 import User from '../models/User';
 
 export class UserController {
 
-    public GetUsers(req: Request, res: Response): void {
-        User.find({})
-            .then((data) => {
-                const status = 200;
-                res.status(status).json({
-                    status,
-                    data
-                });
-            })
-            .catch((err) => {
-                const status = 500;
-                res.status(status).json({
-                    status,
-                    err
-                });
-            })
+    public getAll(req: Request, res: Response): void {
+        User.find()
+            .then((data) => res.json({ users: data }))
+            .catch((err) => res.json({ error: err.errmsg }))
     }
 
-    public GetUser(req: Request, res: Response): void {
+    public get(req: Request, res: Response): void {
         const username: string = req.params.username;
         User.findOne({ username }).populate('posts', 'title content')
             .then((data) => {
-                const status = 200;
-                res.json({
-                    status,
-                    data
-                });
+                if(data){ res.json(data); }else{ res.json( {message: 'The user not was exists'}); }
             })
-            .catch((err) => {
-                const status = 500;
-                res.json({
-                    status,
-                    err
-                });
-            })
+            .catch((err) => res.json({ error: err.errmsg }))
     }
 
-    public CreateUser(req: Request, res: Response): void {
-        const username: string = req.body.username;
-        const email: string = req.body.email;
-        const password: string = req.body.password;
-        const profile: Object = req.body.profile;
-        const posts: string[] = req.body.posts;
-
-        const user = new User({
-            username,
-            email,
-            password,
-            profile,
-            posts
-        })
+    public create(req: Request, res: Response): void {
+        const user = new User();
+        _.assign(user, req.body);
+        
         user.save()
-            .then((data) => {
-                const status = 200;
-                res.status(200).json({
-                    status,
-                    data
-                });
-            })
-            .catch((err) => {
-                const status = 500;
-                res.json({
-                    status,
-                    err
-                });
-            })
+            .then((data) => res.json({ message: 'The user was created succesfully' }))
+            .catch((err) => res.json({ error: err.errmsg }))
     }
 
 
-    public UpdateUser(req: Request, res: Response): void {
+    public update(req: Request, res: Response): void {
         const username: string = req.params.username;
         User.findOneAndUpdate({ username }, req.body)
-            .then((data) => {
-                const status = 200;
-                res.json({
-                    status,
-                    data
-                });
-            })
-            .catch((err) => {
-                const status = 500;
-                res.json({
-                    status,
-                    err
-                });
-            })
+            .then((data) => res.json({ message: 'The user was updated succesfully' }))
+            .catch((err) => res.json({ error: err.errmsg }))
     }
 
-    public DeleteUser(req: Request, res: Response): void {
+    public delete(req: Request, res: Response): void {
         const username: string = req.params.username;
         User.findOneAndRemove({ username })
-            .then((data) => {
-                const status = 200;
-                res.json({
-                    status,
-                    data
-                });
+            .then((data) => { 
+                if(data){ 
+                    res.json({ message: 'The user was deleted succesfully' }); 
+                }else{ 
+                    res.json({ message: 'The user not was deleted succesfully' }); 
+                }
             })
-            .catch((err) => {
-                const status = 500;
-                res.json({
-                    status,
-                    err
-                });
-            })
+            .catch((err) => res.json({ error: err.errmsg }))
     }
 
 }
