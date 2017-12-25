@@ -21,7 +21,6 @@ export class UserController {
             } 
             if(data){ res.json(data); }else{ res.status(404).json({message: 'Not found this user'}); }
         });
-            
     }
 
     public create(req: Request, res: Response): void {
@@ -35,7 +34,6 @@ export class UserController {
             res.json({ message: 'The user was created succesfully' });
         });
     }
-
 
     public update(req: Request, res: Response): void {
         const username: string = req.params.username;
@@ -60,5 +58,4 @@ export class UserController {
             }
         });
     }
-
 }
