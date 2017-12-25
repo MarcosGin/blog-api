@@ -10,7 +10,6 @@ import * as cors from 'cors';
 // import routers
 import PostRouter from './router/PostRouter';
 import UserRouter from './router/UserRouter';
-// Server class
 
 class Server  {
 
@@ -25,11 +24,6 @@ class Server  {
     }
 
     public config() {
-        // set up moogoose
-        const MONGO_URI = 'mongodb://localhost/test';
-        mongoose.connect(MONGO_URI || process.env.MONGODB_URI);
-
-        // config
         this.app.use(bodyParser.urlencoded({ extended: true }))        
         this.app.use(bodyParser.json());
         this.app.use(this.publicDir);
@@ -60,5 +54,4 @@ class Server  {
         
     }
 }
-// export
 export default new Server().app;
