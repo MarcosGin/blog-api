@@ -37,7 +37,7 @@ export class UserController {
 
     public update(req: Request, res: Response): void {
         const username: string = req.params.username;
-        User.findOneAndUpdate({ username }, req.body, (err, data) => {
+        User.update({ username }, req.body, (err, data) => {
             if (err) {
                 return res.status(500).json({ error: err });
             }

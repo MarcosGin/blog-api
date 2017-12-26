@@ -33,7 +33,7 @@ export class PostController {
         const slug: string = req.params.slug;
         Post.findOneAndUpdate({ slug }, req.body, (err, data) => {
             if (err) { return res.status(500).json({ error: err }); }  
-            if (data) { res.json({ message: 'The post was updated succesfully' }); } else { res.json({ message: 'The post not was updated succesfully' }); }            res.json({ message: 'The post was updated succesfully' });
+            if (data) { res.json({ message: 'The post was updated succesfully' }); } else { res.json({ message: 'The post not was updated succesfully' }); }
         });
     }
 

@@ -5,8 +5,10 @@ export interface IPost extends Document{
     title: string;
     slug: string;
     content: string;
+    user: Schema.Types.ObjectId;
     image?: string;
-    tags?: Array<string>;    
+    tags?: Array<string>;
+    status: Array<string>; 
     createdAt: Date;
     updatedAt: Date;
 }
@@ -19,11 +21,11 @@ let schema: Schema = new Schema({
     title:     { type: String, required: true },
     slug:      { type: String, required: true, unique: true, lowercase: true},
     content:   { type: String, required: true },
+    user:      { type: Schema.Types.ObjectId, ref: 'User', required: 'The user is required' },
     image:     { type: String, required: false },
-    tags:      { type: String, required: false },    
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
-});
+    tags:      { type: String, required: false },   
+    status:    { type: String, required: true, enum: ['Disabled', 'Activated'], default: 'Activated'},  
+}, { timestamps: true });
 
 schema.static("findBySlug", (slug: string, callback: (err: any, result: IPost) => void) => {
     return Post
